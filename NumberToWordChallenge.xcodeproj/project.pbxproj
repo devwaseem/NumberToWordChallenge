@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751586B524F70CEF008866FC /* NumberToWordFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751586B424F70CEF008866FC /* NumberToWordFormatter.swift */; };
 		7546C43724F7035200AB2CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546C43624F7035200AB2CEE /* AppDelegate.swift */; };
 		7546C43924F7035200AB2CEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546C43824F7035200AB2CEE /* SceneDelegate.swift */; };
 		7546C43B24F7035200AB2CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546C43A24F7035200AB2CEE /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751586B424F70CEF008866FC /* NumberToWordFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberToWordFormatter.swift; sourceTree = "<group>"; };
 		7546C43324F7035200AB2CEE /* NumberToWordChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberToWordChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7546C43624F7035200AB2CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7546C43824F7035200AB2CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751586AF24F70A89008866FC /* App Start */ = {
+			isa = PBXGroup;
+			children = (
+				7546C43624F7035200AB2CEE /* AppDelegate.swift */,
+				7546C43824F7035200AB2CEE /* SceneDelegate.swift */,
+			);
+			path = "App Start";
+			sourceTree = "<group>";
+		};
+		751586B024F70A9F008866FC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7546C43A24F7035200AB2CEE /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		751586B124F70AAF008866FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7546C43F24F7035500AB2CEE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		751586B224F70AC8008866FC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7546C43C24F7035200AB2CEE /* Main.storyboard */,
+				7546C44124F7035500AB2CEE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		751586B324F70CCC008866FC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				751586B424F70CEF008866FC /* NumberToWordFormatter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7546C42A24F7035200AB2CEE = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +143,11 @@
 		7546C43524F7035200AB2CEE /* NumberToWordChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				7546C43624F7035200AB2CEE /* AppDelegate.swift */,
-				7546C43824F7035200AB2CEE /* SceneDelegate.swift */,
-				7546C43A24F7035200AB2CEE /* ViewController.swift */,
-				7546C43C24F7035200AB2CEE /* Main.storyboard */,
-				7546C43F24F7035500AB2CEE /* Assets.xcassets */,
-				7546C44124F7035500AB2CEE /* LaunchScreen.storyboard */,
+				751586B324F70CCC008866FC /* Utilities */,
+				751586B224F70AC8008866FC /* Storyboards */,
+				751586B124F70AAF008866FC /* Resources */,
+				751586B024F70A9F008866FC /* ViewControllers */,
+				751586AF24F70A89008866FC /* App Start */,
 				7546C44424F7035500AB2CEE /* Info.plist */,
 			);
 			path = NumberToWordChallenge;
@@ -261,6 +304,7 @@
 			files = (
 				7546C43B24F7035200AB2CEE /* ViewController.swift in Sources */,
 				7546C43724F7035200AB2CEE /* AppDelegate.swift in Sources */,
+				751586B524F70CEF008866FC /* NumberToWordFormatter.swift in Sources */,
 				7546C43924F7035200AB2CEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

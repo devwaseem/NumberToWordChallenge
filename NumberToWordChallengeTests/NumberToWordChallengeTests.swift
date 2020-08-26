@@ -11,24 +11,91 @@ import XCTest
 
 class NumberToWordChallengeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    //Tests are compared with apple's inbuilt spellout formatter
+    
+    var formatter: NumberFormatter!
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func setUp() {
+        formatter = NumberFormatter()
+        formatter.numberStyle = .spellOut
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_word_for_first_hundred_numbers() throws {
+        for value in (0...9999) {
+            guard let expectedWord = formatter.string(from: NSNumber(value: value)) else {
+                XCTFail("Error from formatter")
+                return
+            }
+            do {
+                let generatedWord = try NumberToWordFormatter.convert(from: value)
+                if  expectedWord != generatedWord {
+                    XCTFail("Expected: \(expectedWord), Generated Word: \(generatedWord)")
+                }
+            }catch let error {
+                XCTFail(error.localizedDescription)
+            }
+            
         }
     }
+    
+    
+    func test_word_for_hundred_to_thousand_numbers() throws {
+        for value in (100...1000) {
+            guard let expectedWord = formatter.string(from: NSNumber(value: value)) else {
+                XCTFail("Error from formatter")
+                return
+            }
+            do {
+                let generatedWord = try NumberToWordFormatter.convert(from: value)
+                if  expectedWord != generatedWord {
+                    XCTFail("Expected: \(expectedWord), Generated Word: \(generatedWord).")
+                }
+            }catch let error {
+                XCTFail(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    func test_word_for_thousand_to_million_numbers() throws {
+        for value in (1000...100000) {
+            guard let expectedWord = formatter.string(from: NSNumber(value: value)) else {
+                XCTFail("Error from formatter")
+                return
+            }
+            do {
+                let generatedWord = try NumberToWordFormatter.convert(from: value)
+                if  expectedWord != generatedWord {
+                    XCTFail("Expected: \(expectedWord), Generated Word: \(generatedWord).")
+                }
+            }catch let error {
+                XCTFail(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    func test_word_for_hundred_thousand_to_million_numbers() throws {
+        for value in (100000...1000000) {
+            guard let expectedWord = formatter.string(from: NSNumber(value: value)) else {
+                XCTFail("Error from formatter")
+                return
+            }
+            do {
+                let generatedWord = try NumberToWordFormatter.convert(from: value)
+                if  expectedWord != generatedWord {
+                    XCTFail("Expected: \(expectedWord), Generated Word: \(generatedWord).")
+                }
+            }catch let error {
+                XCTFail(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    override func tearDown() {
+        formatter = nil
+    }
+    
 
 }
