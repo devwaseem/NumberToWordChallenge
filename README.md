@@ -30,4 +30,4 @@ To play with the code in playground goto [numbertoword.playground](https://githu
 
 ## Tests
 
-To run UI and Unit Tests press `CMD + U` in xcode.
+To run Unit Tests press `CMD + U` in xcode.
