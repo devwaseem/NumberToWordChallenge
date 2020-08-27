@@ -28,6 +28,7 @@ class NumberToWordFormatter {
     
     private init(){}
     
+    private static let numbersCache = ["0":0,"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9]
     private static let ones = ["", "one","two","three","four", "five", "six","seven","eight","nine","ten","eleven","twelve", "thirteen", "fourteen", "fifteen","sixteen","seventeen", "eighteen","nineteen"]
     private static let decades = ["","","twenty","thirty","forty", "fifty","sixty","seventy","eighty","ninety"]
     private static let thousands = ["","thousand","million", "billion", "trillion", "quadrillion", "quintillion"] //can add more. the code will adapt itself.
@@ -54,7 +55,7 @@ class NumberToWordFormatter {
         
         //premature check for valid integers in string.
         for i in value {
-            guard Int("\(i)") != nil else { throw NumberToWordFormatError.invalidInteger }
+            guard numbersCache[String(i)] != nil else { throw NumberToWordFormatError.invalidInteger }
         }
         
         if value == "0" {
