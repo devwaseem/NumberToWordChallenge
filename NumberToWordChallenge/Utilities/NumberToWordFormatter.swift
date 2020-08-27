@@ -52,10 +52,12 @@ class NumberToWordFormatter {
             throw NumberToWordFormatError.notSupported
         }
         
-        //premature check for valid integers in string
-        guard let integerValue = Int(value) else { throw NumberToWordFormatError.invalidInteger }
+        //premature check for valid integers in string.
+        for i in value {
+            guard Int("\(i)") != nil else { throw NumberToWordFormatError.invalidInteger }
+        }
         
-        if integerValue == 0 {
+        if value == "0" {
             return "zero"
         }
         
